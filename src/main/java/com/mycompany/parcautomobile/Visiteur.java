@@ -46,6 +46,13 @@ public class Visiteur implements java.io.Serializable {
         this.lp.add(this);
     }
 
+    /**
+     *constructeur visiteur + type
+     * @param id
+     * @param nom
+     * @param prenom
+     * @param unTypeVisiteur
+     */
     public Visiteur(int id, String nom, String prenom, String unTypeVisiteur) {
         this.id = id;
         this.nom = nom;
@@ -91,7 +98,11 @@ public class Visiteur implements java.io.Serializable {
         this.nom = nom;
     }
     
-     public String getTypeVisiteur() {
+    /**
+     *getter type Visiteur
+     * @return
+     */
+    public String getTypeVisiteur() {
         return typeVisiteur;
     }
 
