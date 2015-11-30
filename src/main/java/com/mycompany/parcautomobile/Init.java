@@ -42,75 +42,50 @@ import org.xml.sax.SAXException;
 public class Init {
 
     private static Init uniqueInstance;
-    public XMLDecoder decoder = null;
-    public XMLEncoder encoder = null;
+
 
     private Init() {
-        encodXML();
-        decodXML();
-    }
-
-    public static Init getInstance() {
-        if (uniqueInstance == null) {
-            uniqueInstance = new Init();
-        }
-        return uniqueInstance;
-
-    }
-
-    public void encodXML() {
+        XmlDoc doc = new XmlDoc();
 
         Visiteur vincent = new Visiteur(1, "Mazet", "Vincent");
         Visiteur marlon = new Visiteur(2, "Chatte-illon", "Marlon");
         Visiteur alexy = new Visiteur(3, "hivercruysse", "Alexy");
+        
+        Type infirmier = new Type("Infirmier");
+        String i = infirmier.getLibelle();
+        Visiteur guillaume = new Visiteur(4, "Grellet", "guigui",i);
+        
+        Type pediatre = new Type("Docteur","Pediatre");
+        String p = pediatre.getLibelle();
+        Visiteur yannick = new Visiteur(5, "Moreau", "yannou",p);
 
         Vehicule vehicule1 = new Vehicule(1, "Renault", "Clio", 10000);
         Vehicule vehicule2 = new Vehicule(2, "Audi", "A8", 12500);
         Vehicule vehicule3 = new Vehicule(3, "Toyota", "Yaris", 15005);
-        Vehicule vehicule4 = new Vehicule(4, "Renault", "titine", 1);
+        Vehicule vehicule4 = new Vehicule(4, "Renault", "titine", 99999);
+        Vehicule vehicule5 = new Vehicule(5, "Peugeot", "406", 8765);
 
         alexy.addVehicule(vehicule4);
         alexy.addVehicule(vehicule2);
         alexy.addVehicule(vehicule1);
         marlon.addVehicule(vehicule1);
         marlon.addVehicule(vehicule2);
+        
+        
 
-        try {
-            encoder = new XMLEncoder(new BufferedOutputStream(
-                    new FileOutputStream("utilisateur.xml")));
-
-            encoder.writeObject(vincent.getLPersonnes());
-            encoder.writeObject(marlon.getLPersonnes());
-            encoder.writeObject(alexy.getLPersonnes());;
-            encoder.flush();
-
-        } catch (final java.io.IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (encoder != null) {
-                encoder.close();
-            }
-        }
-
+        doc.encodXML(Visiteur.getLPersonnes());
+        doc.decodXML();
+        
     }
 
-    public void decodXML() {
-
-        XMLDecoder decoder = null;
-
-        try {
-            decoder = new XMLDecoder(new FileInputStream("utilisateur.xml"));
-            Visiteur.setLPersonnes((ArrayList<Visiteur>) decoder.readObject()); 
-            //final Visiteur visiteur = (Visiteur) decoder.readObject();
-            for (Visiteur uv : Visiteur.getLPersonnes()) {
-                System.out.println(uv.getPrenom());
-            }
-        } catch (final Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (decoder != null) {
-                decoder.close();
-            }
+    /**
+     *lancement instance programme
+     * @return
+     */
+    public static Init getInstance() {
+        if (uniqueInstance == null) {
+            uniqueInstance = new Init();
         }
+        return uniqueInstance;
     }
 }
