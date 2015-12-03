@@ -6,7 +6,7 @@
 package com.mycompany.parcautomobile;
 
 /**
- *
+ *classe type 
  * @author vincent
  */
 public class Type {
@@ -14,6 +14,13 @@ public class Type {
     private String libelle;
     private String specialisation;
     
+    /**
+     *constructeur Type
+     * 
+     */
+    public Type(){
+        
+    }
     /**
      *constructeur Type
      * @param unLibelle
@@ -63,7 +70,4 @@ public class Type {
     public String getSpecialisation(){
         return specialisation;
     }
-    
-    
-    
 }
