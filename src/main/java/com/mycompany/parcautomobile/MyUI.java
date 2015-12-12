@@ -66,12 +66,15 @@ public class MyUI extends UI {
         layout.addComponent(new Label(" Parc de véhicule :"));
         layout.addComponent(contactList);
 
-        layout.addComponent(new Label(" Grille Visiteur :"));
-        layout.addComponent(grillev);
+
 
         layout.addComponent(new Label("Voiture -15000 :"));
         layout.addComponent(vc);
         //layout.addComponent(contactTable);
+
+        layout.addComponent(new Label(" Grille Visiteur :"));
+        layout.addComponent(grillev);
+
         setContent(layout);
     }
 

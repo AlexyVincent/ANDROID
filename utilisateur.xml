@@ -1,4 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.7.0_79" class="java.beans.XMLDecoder">
- <null/>
+<java version="1.8.0_60" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="com.mycompany.parcautomobile.Visiteur">
+    <void property="ID">
+     <int>1</int>
+    </void>
+    <void property="nom">
+     <string>Mazet</string>
+    </void>
+    <void property="prenom">
+     <string>Vincent</string>
+    </void>
+    <void property="typeVisiteur">
+     <string>Docteur</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.mycompany.parcautomobile.Visiteur">
+    <void property="ID">
+     <int>2</int>
+    </void>
+    <void property="nom">
+     <string>Chattillon</string>
+    </void>
+    <void property="prenom">
+     <string>Marlon</string>
+    </void>
+    <void property="typeVisiteur">
+     <string>Docteur</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.mycompany.parcautomobile.Visiteur">
+    <void property="ID">
+     <int>3</int>
+    </void>
+    <void property="nom">
+     <string>vercruysse</string>
+    </void>
+    <void property="prenom">
+     <string>Alexy</string>
+    </void>
+    <void property="typeVisiteur">
+     <string>Infirmier</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.mycompany.parcautomobile.Visiteur">
+    <void property="ID">
+     <int>4</int>
+    </void>
+    <void property="nom">
+     <string>Grellet</string>
+    </void>
+    <void property="prenom">
+     <string>Guillaume</string>
+    </void>
+    <void property="typeVisiteur">
+     <string>Infirmier</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="com.mycompany.parcautomobile.Visiteur">
+    <void property="ID">
+     <int>5</int>
+    </void>
+    <void property="nom">
+     <string>Moreau</string>
+    </void>
+    <void property="prenom">
+     <string>Yannick</string>
+    </void>
+    <void property="typeVisiteur">
+     <string>Docteur</string>
+    </void>
+   </object>
+  </void>
+ </object>
 </java>

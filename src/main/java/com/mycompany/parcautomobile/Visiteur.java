@@ -97,6 +97,15 @@ public class Visiteur implements java.io.Serializable {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
+    /**
+     * setter typeVisiteur
+     *
+     * @param typeVisiteur
+     */
+    public void setTypeVisiteur(String typeVisiteur) {
+        this.typeVisiteur = typeVisiteur;
+    }
     
     /**
      *getter type Visiteur
