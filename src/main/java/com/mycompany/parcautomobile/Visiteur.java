@@ -191,4 +191,10 @@ public class Visiteur implements java.io.Serializable {
         return idVehicule;
     }
 
+    public void setVehiculeUtilise(String unidvehicule) {
+        this.idVehicule = unidvehicule;
+    }
+
+
+
 }

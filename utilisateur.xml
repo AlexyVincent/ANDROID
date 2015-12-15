@@ -38,6 +38,9 @@
     <void property="prenom">
      <string>Alexy</string>
     </void>
+    <void property="vehiculeUtilise">
+     <string>4</string>
+    </void>
    </object>
   </void>
   <void method="add">
@@ -63,6 +66,9 @@
     </void>
     <void property="prenom">
      <string>Yannick</string>
+    </void>
+    <void property="vehiculeUtilise">
+     <string>8</string>
     </void>
    </object>
   </void>

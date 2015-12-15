@@ -46,6 +46,7 @@ public class Init {
 
     private Init() {
         XmlDoc doc = new XmlDoc();
+        TestPollution testPollution = new TestPollution();
 
         Type infirmier = new Type("Infirmier");
 
@@ -58,25 +59,45 @@ public class Init {
         Visiteur guillaume = new Visiteur(4, "Grellet", "Guillaume", infirmier);
         Visiteur yannick = new Visiteur(5, "Moreau", "Yannick", pediatre);
 
-        Vehicule vehicule1 = new Vehicule(1, "Renault", "Clio", 10000);
-        Vehicule vehicule2 = new Vehicule(2, "Audi", "A8", 12500);
-        Vehicule vehicule3 = new Vehicule(3, "Toyota", "Yaris", 15005);
-        Vehicule vehicule4 = new Vehicule(4, "Renault", "Megane", 12500);
-        Vehicule vehicule5 = new Vehicule(5, "Peugeot", "406", 8765);
-        Vehicule vehicule6 = new Vehicule(6, "Fiat", "Punto", 8500);
-        Vehicule vehicule7 = new Vehicule(7, "Citroen", "c3", 9500);
-        Vehicule vehicule8 = new Vehicule(8, "Ford", "Fiesta", 8850);
+        MarqueVehicule renault = new MarqueVehicule("Renault",65);
+        MarqueVehicule peugeot = new MarqueVehicule("Peugeot",45);
+        MarqueVehicule volkswagen = new MarqueVehicule("VW",80);
+        MarqueVehicule ford = new MarqueVehicule("Ford",72);
+
+
+        Vehicule vehicule1 = new Vehicule(1,  "Clio", 10000,renault.getLibelle(),renault.getTauxDeReference());
+        Vehicule vehicule2 = new Vehicule(2,  "Golf", 12500,volkswagen.getLibelle(),250);
+        Vehicule vehicule3 = new Vehicule(3,  "206", 15005,peugeot.getLibelle(),40);
+        Vehicule vehicule4 = new Vehicule(4,  "Megane", 12500,renault.getLibelle(),65);
+        Vehicule vehicule5 = new Vehicule(5,  "406", 8765,peugeot.getLibelle(),43);
+        Vehicule vehicule6 = new Vehicule(6, "mustang", 58500,ford.getLibelle(),85);
+        Vehicule vehicule7 = new Vehicule(7,  "Koleos", 19500,renault.getLibelle(),67);
+        Vehicule vehicule8 = new Vehicule(8,  "Fiesta", 8850,ford.getLibelle(),62);
+
+        testPollution.testVehicule(vehicule1,renault);
+        testPollution.testVehicule(vehicule2,volkswagen);
+        testPollution.testVehicule(vehicule3,peugeot);
+        testPollution.testVehicule(vehicule4,renault);
+        testPollution.testVehicule(vehicule5,peugeot);
+        testPollution.testVehicule(vehicule6,ford);
+        testPollution.testVehicule(vehicule7,renault);
+        testPollution.testVehicule(vehicule8,ford);
 
         vincent.setTypeVisiteur(pediatre);
         marlon.setTypeVisiteur(pediatre);
         alexy.setTypeVisiteur(infirmier);
 
         alexy.addVehicule(vehicule4);
-        marlon.addVehicule(vehicule1);
         marlon.addVehicule(vehicule2);
         guillaume.addVehicule(vehicule6);
         vincent.addVehicule(vehicule7);
         yannick.addVehicule(vehicule8);
+
+        testPollution.enleverVehicule(alexy,vehicule4,renault);
+        testPollution.enleverVehicule(marlon,vehicule2,volkswagen);
+        testPollution.enleverVehicule(guillaume,vehicule6,ford);
+        testPollution.enleverVehicule(vincent,vehicule7,renault);
+        testPollution.enleverVehicule(yannick,vehicule8,ford);
 
         doc.encodXML(Visiteur.getLPersonnes());
         doc.decodXML();

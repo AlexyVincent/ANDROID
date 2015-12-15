@@ -18,9 +18,11 @@ import java.util.List;
 public class Vehicule implements java.io.Serializable {
 
     private int id;
-    private String marque;
     private String modele;
     private double prix;
+    private String marque;
+    private double taux;
+    private boolean enReparation;
     private static BeanItemContainer<Vehicule> vehicules = new BeanItemContainer<>(Vehicule.class);
     private static BeanItemContainer<Vehicule> vehiculesPC = new BeanItemContainer<>(Vehicule.class);
 
@@ -33,23 +35,25 @@ public class Vehicule implements java.io.Serializable {
     /**
      * constructeur pour ajouter un vehicule
      *
-     * @param id     the id
-     * @param marque the marque
-     * @param modele the modele
-     * @param prix   the prix
+     * @param id        the id
+     * @param modele    the modele
+     * @param prix      the prix
+     * @param uneMarque the une marque
+     * @param taux      the taux
      */
-    public Vehicule(int id, String marque, String modele, double prix) {
+    public Vehicule(int id, String modele, double prix, String uneMarque , double taux) {
         this.id = id;
-        this.marque = marque;
         this.modele = modele;
         this.prix = prix;
+        this.marque = uneMarque;
+        this.taux = taux;
         this.vehicules.addBean(this);
     }
 
     /**
      * calcul prix majore en fct marque
      *
-     * @return double
+     * @return double double
      */
     public double getPrixMajore(){
         double majR= 1.05;
@@ -67,39 +71,53 @@ public class Vehicule implements java.io.Serializable {
     }
 
     /**
-     * getter marque
+     * Get en reparation boolean.
      *
-     * @return marque
+     * @return the boolean
      */
-    public String getMarque() {
-        return marque;
+    public boolean getEnReparation(){
+        return enReparation;
     }
+
+    public void setEnReparation(boolean unEnReparation){
+        this.enReparation = unEnReparation;
+    }
+
 
     /**
      * getter modèle
      *
-     * @return modele
+     * @return modele modele
      */
     public String getModele() {
         return modele;
     }
 
     /**
-     * getter prix
+     * Gets .
      *
-     * @return prix
+     * @return the marque
      */
-    public double getPrix() {
-        return prix;
+    public String getmarque() {
+        return marque;
     }
 
     /**
-     * setter marque
+     * Gets taux.
      *
-     * @param marque the marque
+     * @return the taux
      */
-    public void setMarque(String marque) {
-        this.marque = marque;
+    public double getTaux() {
+        return taux;
+    }
+
+    /**
+     * getter prix
+     *
+     * @return prix prix
+     */
+    public double getPrix() {
+        return prix;
     }
 
     /**
@@ -123,7 +141,7 @@ public class Vehicule implements java.io.Serializable {
     /**
      * getter id
      *
-     * @return id
+     * @return id id
      */
     public int getId() {
         return id;
@@ -141,7 +159,7 @@ public class Vehicule implements java.io.Serializable {
     /**
      * getter bean vehicule
      *
-     * @return vehicules
+     * @return vehicules vehicules
      */
     public static BeanItemContainer<Vehicule> getVehicules() {
         return vehicules;
@@ -151,7 +169,7 @@ public class Vehicule implements java.io.Serializable {
      * getter bean prix
      *
      * @param prix the prix
-     * @return pb
+     * @return pb pb
      */
     public static BeanItemContainer<Vehicule> getPb(int prix) {
 

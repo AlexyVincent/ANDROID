@@ -25,7 +25,7 @@ public class VisiteurTest {
     }
 
     /**
-     * Sets up class.
+     * Sets up class.A
      */
     @BeforeClass
     public static void setUpClass() {
