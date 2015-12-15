@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * The type Vehicule.
  *
  * @author user
  */
@@ -24,17 +25,18 @@ public class Vehicule implements java.io.Serializable {
     private static BeanItemContainer<Vehicule> vehiculesPC = new BeanItemContainer<>(Vehicule.class);
 
     /**
-     *constructeur vide obligatoire pour le xml
+     * constructeur vide obligatoire pour le xml
      */
     public Vehicule() {
     }
 
     /**
-     *constructeur pour ajouter un vehicule
-     * @param id
-     * @param marque
-     * @param modele
-     * @param prix
+     * constructeur pour ajouter un vehicule
+     *
+     * @param id     the id
+     * @param marque the marque
+     * @param modele the modele
+     * @param prix   the prix
      */
     public Vehicule(int id, String marque, String modele, double prix) {
         this.id = id;
@@ -43,10 +45,11 @@ public class Vehicule implements java.io.Serializable {
         this.prix = prix;
         this.vehicules.addBean(this);
     }
-    
+
     /**
-     *calcul prix majore en fct marque
-     * @return
+     * calcul prix majore en fct marque
+     *
+     * @return double
      */
     public double getPrixMajore(){
         double majR= 1.05;
@@ -64,81 +67,91 @@ public class Vehicule implements java.io.Serializable {
     }
 
     /**
-     *getter marque
-     * @return
+     * getter marque
+     *
+     * @return marque
      */
     public String getMarque() {
         return marque;
     }
 
     /**
-     *getter modèle
-     * @return
+     * getter modèle
+     *
+     * @return modele
      */
     public String getModele() {
         return modele;
     }
 
     /**
-     *getter prix
-     * @return
+     * getter prix
+     *
+     * @return prix
      */
     public double getPrix() {
         return prix;
     }
 
     /**
-     *setter marque
-     * @param marque
+     * setter marque
+     *
+     * @param marque the marque
      */
     public void setMarque(String marque) {
         this.marque = marque;
     }
 
     /**
-     *setter modele
-     * @param modele
+     * setter modele
+     *
+     * @param modele the modele
      */
     public void setModele(String modele) {
         this.modele = modele;
     }
 
     /**
-     *setter prix
-     * @param prix
+     * setter prix
+     *
+     * @param prix the prix
      */
     public void setPrix(double prix) {
         this.prix = prix;
     }
 
     /**
-     *getter id
-     * @return
+     * getter id
+     *
+     * @return id
      */
     public int getId() {
         return id;
     }
 
     /**
-     *setter id
-     * @param id
+     * setter id
+     *
+     * @param id the id
      */
     public void setId(int id) {
         this.id = id;
     }
 
     /**
-     *getter bean vehicule
-     * @return
+     * getter bean vehicule
+     *
+     * @return vehicules
      */
     public static BeanItemContainer<Vehicule> getVehicules() {
         return vehicules;
     }
 
     /**
-     *getter bean prix
-     * @param prix
-     * @return
+     * getter bean prix
+     *
+     * @param prix the prix
+     * @return pb
      */
     public static BeanItemContainer<Vehicule> getPb(int prix) {
 

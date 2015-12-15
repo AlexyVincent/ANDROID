@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * The type Visiteur.
  *
  * @author vincent
  */
@@ -34,9 +35,9 @@ public class Visiteur implements java.io.Serializable {
     /**
      * constructeur nv visiteur
      *
-     * @param id
-     * @param nom
-     * @param prenom
+     * @param id     the id
+     * @param nom    the nom
+     * @param prenom the prenom
      */
     public Visiteur(int id, String nom, String prenom) {
         this.id = id;
@@ -47,17 +48,18 @@ public class Visiteur implements java.io.Serializable {
     }
 
     /**
-     *constructeur visiteur + type
-     * @param id
-     * @param nom
-     * @param prenom
-     * @param unTypeVisiteur
+     * constructeur visiteur + type
+     *
+     * @param id             the id
+     * @param nom            the nom
+     * @param prenom         the prenom
+     * @param unTypeVisiteur the un type visiteur
      */
-    public Visiteur(int id, String nom, String prenom, String unTypeVisiteur) {
+    public Visiteur(int id, String nom, String prenom, Type unTypeVisiteur) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
-        this.typeVisiteur= unTypeVisiteur;
+        this.typeVisiteur= unTypeVisiteur.getLibelle();
         this.personnes.addBean(this);
         this.lp.add(this);
     }
@@ -65,7 +67,7 @@ public class Visiteur implements java.io.Serializable {
     /**
      * getter id
      *
-     * @return
+     * @return id
      */
     public int getID() {
         return id;
@@ -74,7 +76,7 @@ public class Visiteur implements java.io.Serializable {
     /**
      * setter id
      *
-     * @param id
+     * @param id the id
      */
     public void setID(int id) {
         this.id = id;
@@ -83,7 +85,7 @@ public class Visiteur implements java.io.Serializable {
     /**
      * getter nom
      *
-     * @return
+     * @return nom
      */
     public String getNom() {
         return nom;
@@ -92,7 +94,7 @@ public class Visiteur implements java.io.Serializable {
     /**
      * setter nom
      *
-     * @param nom
+     * @param nom the nom
      */
     public void setNom(String nom) {
         this.nom = nom;
@@ -101,15 +103,16 @@ public class Visiteur implements java.io.Serializable {
     /**
      * setter typeVisiteur
      *
-     * @param typeVisiteur
+     * @param typeVisiteur the type visiteur
      */
-    public void setTypeVisiteur(String typeVisiteur) {
-        this.typeVisiteur = typeVisiteur;
+    public void setTypeVisiteur(Type typeVisiteur) {
+        this.typeVisiteur = typeVisiteur.getLibelle();
     }
-    
+
     /**
-     *getter type Visiteur
-     * @return
+     * getter type Visiteur
+     *
+     * @return type visiteur
      */
     public String getTypeVisiteur() {
         return typeVisiteur;
@@ -118,7 +121,7 @@ public class Visiteur implements java.io.Serializable {
     /**
      * getter nom
      *
-     * @return
+     * @return prenom
      */
     public String getPrenom() {
         return prenom;
@@ -127,7 +130,7 @@ public class Visiteur implements java.io.Serializable {
     /**
      * setter prenom
      *
-     * @param prenom
+     * @param prenom the prenom
      */
     public void setPrenom(String prenom) {
         this.prenom = prenom;
@@ -136,7 +139,7 @@ public class Visiteur implements java.io.Serializable {
     /**
      * Bean get personnes
      *
-     * @return
+     * @return personnes
      */
     public static BeanItemContainer<Visiteur> getPersonnes() {
         return personnes;
@@ -145,7 +148,7 @@ public class Visiteur implements java.io.Serializable {
     /**
      * get array visiteur
      *
-     * @return
+     * @return l personnes
      */
     public static ArrayList<Visiteur> getLPersonnes() {
         return lp;
@@ -154,7 +157,7 @@ public class Visiteur implements java.io.Serializable {
     /**
      * setter liste personnes
      *
-     * @param v
+     * @param v the v
      */
     public static void setLPersonnes(ArrayList<Visiteur> v) {
         lp = v;
@@ -163,7 +166,7 @@ public class Visiteur implements java.io.Serializable {
     /**
      * fct add vehicule pr visiteur
      *
-     * @param v
+     * @param v the v
      */
     public void addVehicule(Vehicule v) {
         leidVehicule = v.getId();
@@ -182,7 +185,7 @@ public class Visiteur implements java.io.Serializable {
     /**
      * getter vehicule utilisé
      *
-     * @return
+     * @return vehicule utilise
      */
     public String getVehiculeUtilise() {
         return idVehicule;

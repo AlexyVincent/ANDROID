@@ -12,9 +12,6 @@
     <void property="prenom">
      <string>Vincent</string>
     </void>
-    <void property="typeVisiteur">
-     <string>Docteur</string>
-    </void>
    </object>
   </void>
   <void method="add">
@@ -27,9 +24,6 @@
     </void>
     <void property="prenom">
      <string>Marlon</string>
-    </void>
-    <void property="typeVisiteur">
-     <string>Docteur</string>
     </void>
    </object>
   </void>
@@ -44,9 +38,6 @@
     <void property="prenom">
      <string>Alexy</string>
     </void>
-    <void property="typeVisiteur">
-     <string>Infirmier</string>
-    </void>
    </object>
   </void>
   <void method="add">
@@ -60,9 +51,6 @@
     <void property="prenom">
      <string>Guillaume</string>
     </void>
-    <void property="typeVisiteur">
-     <string>Infirmier</string>
-    </void>
    </object>
   </void>
   <void method="add">
@@ -75,9 +63,6 @@
     </void>
     <void property="prenom">
      <string>Yannick</string>
-    </void>
-    <void property="typeVisiteur">
-     <string>Docteur</string>
     </void>
    </object>
   </void>

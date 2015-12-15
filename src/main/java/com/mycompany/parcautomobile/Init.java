@@ -36,6 +36,7 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 /**
+ * The type Init.
  *
  * @author vincent
  */
@@ -47,15 +48,15 @@ public class Init {
         XmlDoc doc = new XmlDoc();
 
         Type infirmier = new Type("Infirmier");
-        String i = infirmier.getLibelle();
+
         Type pediatre = new Type("Docteur", "Pediatre");
-        String p = pediatre.getLibelle();
+
 
         Visiteur vincent = new Visiteur(1, "Mazet", "Vincent");
         Visiteur marlon = new Visiteur(2, "Chattillon", "Marlon");
         Visiteur alexy = new Visiteur(3, "vercruysse", "Alexy");
-        Visiteur guillaume = new Visiteur(4, "Grellet", "Guillaume", i);
-        Visiteur yannick = new Visiteur(5, "Moreau", "Yannick", p);
+        Visiteur guillaume = new Visiteur(4, "Grellet", "Guillaume", infirmier);
+        Visiteur yannick = new Visiteur(5, "Moreau", "Yannick", pediatre);
 
         Vehicule vehicule1 = new Vehicule(1, "Renault", "Clio", 10000);
         Vehicule vehicule2 = new Vehicule(2, "Audi", "A8", 12500);
@@ -66,9 +67,9 @@ public class Init {
         Vehicule vehicule7 = new Vehicule(7, "Citroen", "c3", 9500);
         Vehicule vehicule8 = new Vehicule(8, "Ford", "Fiesta", 8850);
 
-        vincent.setTypeVisiteur(p);
-        marlon.setTypeVisiteur(p);
-        alexy.setTypeVisiteur(i);
+        vincent.setTypeVisiteur(pediatre);
+        marlon.setTypeVisiteur(pediatre);
+        alexy.setTypeVisiteur(infirmier);
 
         alexy.addVehicule(vehicule4);
         marlon.addVehicule(vehicule1);
@@ -85,7 +86,7 @@ public class Init {
     /**
      * lancement instance programme
      *
-     * @return
+     * @return uniqueInstance instance
      */
     public static Init getInstance() {
         if (uniqueInstance == null) {

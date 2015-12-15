@@ -10,14 +10,21 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
+ * The type Type test.
  *
  * @author vincent
  */
 public class TypeTest {
-    
+
+    /**
+     * Instantiates a new Type test.
+     */
     public TypeTest() {
     }
-    
+
+    /**
+     * Sets up class.
+     */
     @BeforeClass
     public static void setUpClass() {
     }

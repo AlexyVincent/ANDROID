@@ -23,7 +23,8 @@ import java.util.logging.Logger;
 import javax.servlet.annotation.WebServlet;
 
 /**
- *classe main, instancie vaadin
+ * classe main, instancie vaadin
+ *
  * @author vincent
  */
 @Theme("mytheme")
@@ -79,7 +80,7 @@ public class MyUI extends UI {
     }
 
     /**
-     *MyUIServlet
+     * MyUIServlet
      */
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)

@@ -12,14 +12,21 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
+ * The type Visiteur test.
  *
  * @author vincent
  */
 public class VisiteurTest {
-    
+
+    /**
+     * Instantiates a new Visiteur test.
+     */
     public VisiteurTest() {
     }
-    
+
+    /**
+     * Sets up class.
+     */
     @BeforeClass
     public static void setUpClass() {
     }
@@ -31,7 +38,8 @@ public class VisiteurTest {
     @Test
     public void testGetTypeVisiteur() {
         System.out.println("getTypeVisiteur");
-        Visiteur instance = new Visiteur(888,"TestVisiteur", "Billy","Docteur");
+        Type ok = new Type("Docteur");
+        Visiteur instance = new Visiteur(888,"TestVisiteur", "Billy", ok);
         String expResult = "Docteur";
         String result = instance.getTypeVisiteur();
         assertEquals(expResult, result);

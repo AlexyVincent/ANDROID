@@ -13,6 +13,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 /**
+ * The type Xml doc.
  *
  * @author vincent
  */
@@ -38,7 +39,7 @@ public class XmlDoc {
     /**
      * encode xml avec array visiteur
      *
-     * @param lp
+     * @param lp the lp
      */
     public void encodXML(ArrayList<Visiteur> lp) {
 
