@@ -24,6 +24,7 @@ public class Visiteur implements java.io.Serializable {
     private int leidVehicule;
     private static BeanItemContainer<Visiteur> personnes = new BeanItemContainer<>(Visiteur.class);
     private static ArrayList<Visiteur> lp = new ArrayList<Visiteur>();
+    private ArrayList<Brevet> listeBrevet = new ArrayList<Brevet>();
 
     /**
      * Constructeur vide - xml
@@ -89,6 +90,22 @@ public class Visiteur implements java.io.Serializable {
      */
     public String getNom() {
         return nom;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public ArrayList<Brevet> getPermis() {
+        return listeBrevet;
+    }
+    
+    /**
+     *
+     * @param unBrevet
+     */
+    public void setPermis(Brevet unBrevet) {
+        this.listeBrevet.add(unBrevet);
     }
 
     /**
@@ -191,6 +208,10 @@ public class Visiteur implements java.io.Serializable {
         return idVehicule;
     }
 
+    /**
+     *
+     * @param unidvehicule
+     */
     public void setVehiculeUtilise(String unidvehicule) {
         this.idVehicule = unidvehicule;
     }
